@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <SplitPane dividerPositions="0.24540901502504173" prefHeight="900.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="300.0">
+               <children>
+                  <Button layoutX="109.0" layoutY="443.0" mnemonicParsing="false" text="Cargar" />
+                  <Button layoutX="225.0" layoutY="270.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="40.0" text="..." />
+                  <TextField layoutX="12.0" layoutY="183.0" prefHeight="51.0" prefWidth="267.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView layoutX="12.0" layoutY="80.0" prefHeight="495.0" prefWidth="879.0">
+                    <columns>
+                      <TableColumn prefWidth="62.0" text="C" />
+                      <TableColumn prefWidth="78.0" text="N&amp;A" />
+                        <TableColumn prefWidth="70.0" text="Email" />
+                        <TableColumn prefWidth="72.0" text="Tel" />
+                        <TableColumn prefWidth="76.0" text="Nck" />
+                        <TableColumn prefWidth="74.0" text="T.E" />
+                        <TableColumn prefWidth="78.0" text="P.E" />
+                        <TableColumn prefWidth="70.0" text="P.Q" />
+                        <TableColumn prefWidth="71.0" text="P.T" />
+                        <TableColumn prefWidth="82.0" text="P1" />
+                        <TableColumn prefWidth="72.0" text="P2" />
+                        <TableColumn prefWidth="68.0" text="P3" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
