@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.csvreader.CsvReader;
+import com.model.Estudiante;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -29,15 +30,72 @@ public class MainApp extends Application {
 			
 			csvReader= new CsvReader(freader,column.charAt(0));
 			
-			String[] rubros=null;
+			String[] cabeceras=null;
 			List registrosEstudiantes=new ArrayList();
 			
 			if(csvReader.readHeaders()) {
-				rubros=csvReader.getHeaders();
+				cabeceras=csvReader.getHeaders();
 			}
 			
 			while(csvReader.readRecord()) {
+				String id =csvReader.get(cabeceras[0]);
+				int ID=Integer.parseInt(id);
 				
+				String FULLNAME= csvReader.get(cabeceras[1]);
+				
+				String EMAIL= csvReader.get(cabeceras[2]);
+				
+				String phone= csvReader.get(cabeceras[3]);
+				int PHONE=Integer.parseInt(phone);
+				
+				String NICKNAME= csvReader.get(cabeceras[4]);
+				
+				String TYPESTUDENT= csvReader.get(cabeceras[5]);
+				
+				String examProm= csvReader.get(cabeceras[6]);
+				int EXAMPROM=Integer.parseInt(examProm);
+				
+				String quizProm= csvReader.get(cabeceras[7]);
+				int QUIZPROM=Integer.parseInt(quizProm);
+				
+				String tareaProm= csvReader.get(cabeceras[8]);
+				int TAREAPROM=Integer.parseInt(tareaProm);
+				
+				String proyecto1= csvReader.get(cabeceras[9]);
+				int PROYECTO1=Integer.parseInt(proyecto1);
+				
+				String proyecto2= csvReader.get(cabeceras[10]);
+				int PROYECTO2=Integer.parseInt(proyecto2);
+				
+				String proyecto3= csvReader.get(cabeceras[11]);
+				int PROYECTO3=Integer.parseInt(proyecto3);
+				
+				int PROJECTPROM=(PROYECTO1+PROYECTO2+PROYECTO3)/3;
+				
+				int EXTRASPROM=(EXAMPROM+QUIZPROM+TAREAPROM)/3;
+				
+				int FINALNOTE= PROYECTO1+PROYECTO2+PROYECTO3;
+				
+				
+				Estudiante estudiante = new Estudiante();
+				estudiante.setId(ID);
+				estudiante.setFullname(FULLNAME);
+				estudiante.setEmail(EMAIL);
+				estudiante.setPhone(PHONE);
+				estudiante.setNickname(NICKNAME);
+				estudiante.setTypeStudent(TYPESTUDENT);
+				estudiante.setExamProm(EXAMPROM);
+				estudiante.setQuizProm(QUIZPROM);
+				estudiante.setTareaProm(TAREAPROM);
+				estudiante.setProyecto1(PROYECTO1);
+				estudiante.setProyecto2(PROYECTO2);
+				estudiante.setProyecto3(PROYECTO3);
+				estudiante.setProjectProm(PROJECTPROM);
+				estudiante.setExtraProm(EXTRASPROM);
+				estudiante.setFinalNote(FINALNOTE);
+				
+				
+				registrosEstudiantes.add(estudiante);
 			}
 			
 			
