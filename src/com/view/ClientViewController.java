@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.FileChooser;
 
 public class ClientViewController {
 	@FXML
@@ -37,6 +38,14 @@ public class ClientViewController {
 		//idColumn.setCellValueFactory(cellData ->cellData.getValue().getId().asObject());
 		fullNameColumn.setCellValueFactory(cellData->new ReadOnlyStringWrapper(cellData.getValue().getFullname()));
 	}
+	@FXML
+	public void buttonOnAction() {
+		FileChooser fileChooser=new FileChooser();
+		File file=fileChooser.showOpenDialog(null);
+		fileChooser.setTitle("CSV File");
+		fileChooser.getExtensionFilters().addAll(
+				new FileChooser.ExtensionFilter("CSV", "*.csv"));						
+			}
 	
 
 	

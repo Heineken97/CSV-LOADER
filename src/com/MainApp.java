@@ -3,7 +3,6 @@ package com;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -24,22 +22,33 @@ public class MainApp extends Application {
 	
 	private Stage primaryStage;
 	private BorderPane rootLayout;
-	
-private final List registrosEstudiantes=new ArrayList();
-	
+	private File file;
+	private final List registrosEstudiantes=new ArrayList();
 	private final ObservableList<Estudiante> dataEstudiante = FXCollections.observableArrayList();
 	
+	public ObservableList<Estudiante> getStudentData() {
+        return dataEstudiante ;
+    }
+
+	@Override
+	public void start(Stage primaryStage) {
+		this.primaryStage=primaryStage;
+		this.primaryStage.setTitle("CSV Checker");
+	
+		initRootLayout();
+		
+		showPersonOverview();
+		
+	}
 	
 	public List ReadCSV(String pathfile,String column) throws Exception{
 		CsvReader csvReader=null;
-		File file=null;
 		
 		try {
 			
 			FileReader freader= new FileReader(file);
-			
 			csvReader= new CsvReader(freader,column.charAt(0));
-			
+		
 			String[] cabeceras=null;
 			//List registrosEstudiantes=new ArrayList();
 			
@@ -120,20 +129,7 @@ private final List registrosEstudiantes=new ArrayList();
 		}		
 	}
 	
-	public ObservableList<Estudiante> getStudentData() {
-        return dataEstudiante ;
-    }
-
-	@Override
-	public void start(Stage primaryStage) {
-		this.primaryStage=primaryStage;
-		this.primaryStage.setTitle("CSV Checker");
-		
-		initRootLayout();
-		
-		showPersonOverview();
-		
-	}
+	
 	
 	public void initRootLayout() {
 		try {
@@ -171,4 +167,5 @@ private final List registrosEstudiantes=new ArrayList();
 	public static void main(String[] args) {
 		launch(args);
 	}
+
 }

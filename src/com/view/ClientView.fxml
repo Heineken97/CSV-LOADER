@@ -35,7 +35,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button layoutX="46.0" layoutY="16.0" mnemonicParsing="false" onAction="#initialize" text="..." />
+                  <Button layoutX="46.0" layoutY="16.0" mnemonicParsing="false" onAction="#buttonOnAction" text="..." />
                </children></AnchorPane>
         </items>
       </SplitPane>
