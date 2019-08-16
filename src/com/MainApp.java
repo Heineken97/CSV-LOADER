@@ -3,6 +3,7 @@ package com;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +11,11 @@ import com.csvreader.CsvReader;
 import com.model.Estudiante;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -21,17 +25,23 @@ public class MainApp extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 	
+private final List registrosEstudiantes=new ArrayList();
+	
+	private final ObservableList<Estudiante> dataEstudiante = FXCollections.observableArrayList();
+	
+	
 	public List ReadCSV(String pathfile,String column) throws Exception{
 		CsvReader csvReader=null;
+		File file=null;
+		
 		try {
 			
-			File file= new File(pathfile);
 			FileReader freader= new FileReader(file);
 			
 			csvReader= new CsvReader(freader,column.charAt(0));
 			
 			String[] cabeceras=null;
-			List registrosEstudiantes=new ArrayList();
+			//List registrosEstudiantes=new ArrayList();
 			
 			if(csvReader.readHeaders()) {
 				cabeceras=csvReader.getHeaders();
@@ -107,10 +117,12 @@ public class MainApp extends Application {
 			if(csvReader!=null) {
 				csvReader.close();
 			}
-		}
-		
-		
+		}		
 	}
+	
+	public ObservableList<Estudiante> getStudentData() {
+        return dataEstudiante ;
+    }
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -144,9 +156,9 @@ public class MainApp extends Application {
 			
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/ClientView.fxml"));
-			AnchorPane personOverview =(AnchorPane) loader.load();
+			AnchorPane clientView =(AnchorPane) loader.load();
 			
-			rootLayout.setCenter(personOverview);
+			rootLayout.setCenter(clientView);
 			}catch(IOException e){
 				e.printStackTrace();
 			}
