@@ -45,7 +45,7 @@ public class MainApp extends Application {
 		CsvReader csvReader=null;
 		
 		try {
-			
+						
 			FileReader freader= new FileReader(file);
 			csvReader= new CsvReader(freader,column.charAt(0));
 		
