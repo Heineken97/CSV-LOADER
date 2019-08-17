@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.csvreader.CsvReader;
 import com.model.Estudiante;
+import com.view.ClientViewController;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -98,10 +99,10 @@ public class MainApp extends Application {
 				
 				Estudiante estudiante = new Estudiante();
 				estudiante.setId(ID);
-				estudiante.setFullname(FULLNAME);
+				estudiante.setFullName(FULLNAME);
 				estudiante.setEmail(EMAIL);
 				estudiante.setPhone(PHONE);
-				estudiante.setNickname(NICKNAME);
+				estudiante.setNickName(NICKNAME);
 				estudiante.setTypeStudent(TYPESTUDENT);
 				estudiante.setExamProm(EXAMPROM);
 				estudiante.setQuizProm(QUIZPROM);
@@ -155,6 +156,10 @@ public class MainApp extends Application {
 			AnchorPane clientView =(AnchorPane) loader.load();
 			
 			rootLayout.setCenter(clientView);
+			
+			ClientViewController controller = loader.getController();
+	        controller.setMainApp(this);
+	        
 			}catch(IOException e){
 				e.printStackTrace();
 			}

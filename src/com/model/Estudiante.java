@@ -1,275 +1,165 @@
 package com.model;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Estudiante {
 	
-	private int id;
-	private String fullname;
-	private String email;
-	private int phone;
-	private String nickname;
-	private String typeStudent;
-	private int examProm;
-	private int quizProm;
-	private int tareaProm;
-	private int proyecto1;
-	private int proyecto2;
-	private int proyecto3;
+	private final IntegerProperty  id;
+	private final StringProperty  fullname;
+	private final StringProperty  email;
+	private final IntegerProperty phone;
+	private final StringProperty  nickname;
+	private final StringProperty  typeStudent;
+	private final IntegerProperty examProm;
+	private final IntegerProperty quizProm;
+	private final IntegerProperty tareaProm;
+	private final IntegerProperty proyecto1;
+	private final IntegerProperty proyecto2;
+	private final IntegerProperty proyecto3;
 	
-	private int projectProm;
-	private int extraProm;
-	private int finalNote;
+	private final IntegerProperty projectProm;
+	private final IntegerProperty extraProm;
+	private final IntegerProperty finalNote;
 	
 	public Estudiante(int ID, String FULLNAME, String EMAIL, int PHONE, String NICKNAME, String TYPESTUDENT, int EXAMPROM, 
 						int QUIZPROM, int TAREAPROM, int PROYECTO1,int PROYECTO2, int PROYECTO3) {
-		this.id=ID;
-		this.fullname=FULLNAME;
-		this.email=EMAIL;
-		this.phone=PHONE;
-		this.nickname=NICKNAME;
-		this.typeStudent=TYPESTUDENT;
-		this.examProm=EXAMPROM;
-		this.quizProm=QUIZPROM;
-		this.tareaProm=TAREAPROM;
-		this.proyecto1=PROYECTO1;
-		this.proyecto2=PROYECTO2;
-		this.proyecto3=PROYECTO3;
+		this.id=new SimpleIntegerProperty(ID);
+		this.fullname=new SimpleStringProperty(FULLNAME);
+		this.email=new SimpleStringProperty(EMAIL);
+		this.phone=new SimpleIntegerProperty(PHONE);
+		this.nickname=new SimpleStringProperty(NICKNAME);
+		this.typeStudent=new SimpleStringProperty(TYPESTUDENT);
+		this.examProm=new SimpleIntegerProperty(EXAMPROM);
+		this.quizProm=new SimpleIntegerProperty(QUIZPROM);
+		this.tareaProm=new SimpleIntegerProperty(TAREAPROM);
+		this.proyecto1=new SimpleIntegerProperty(PROYECTO1);
+		this.proyecto2=new SimpleIntegerProperty(PROYECTO2);
+		this.proyecto3=new SimpleIntegerProperty(PROYECTO3);
 		
-		this.projectProm=0;
-		this.extraProm=0;
-		this.finalNote=0;
+		this.projectProm=new SimpleIntegerProperty(0);
+		this.extraProm=new SimpleIntegerProperty(0);
+		this.finalNote=new SimpleIntegerProperty(0);
 		
 	}
 	
 	public Estudiante() {
-		this.id=0;
-		this.fullname=null;
-		this.email=null;
-		this.phone=0;
-		this.nickname=null;
-		this.typeStudent=null;
-		this.examProm=0;
-		this.quizProm=0;
-		this.tareaProm=0;
-		this.proyecto1=0;
-		this.proyecto2=0;
-		this.proyecto3=0;
-		
-		this.projectProm=0;
-		this.extraProm=0;
-		this.finalNote=0;
+		this(0,null,null,0,null,null,0,0,0,0,0,0);
 	}
 
-	/**
-	 * @return the id
-	 */
-	public int getId() {
+	public IntegerProperty getId() {
 		return id;
 	}
-
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(int id) {
-		this.id = id;
-	}
+        this.id.set(id);
+    }
 
-	/**
-	 * @return the fullname
-	 */
-	public String getFullname() {
+	public StringProperty getFullname() {
 		return fullname;
 	}
+	
+	public void setFullName(String fullname) {
+        this.fullname.set(fullname);
+    }
 
-	/**
-	 * @param fullname the fullname to set
-	 */
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
-	}
-
-	/**
-	 * @return the email
-	 */
-	public String getEmail() {
+	public StringProperty getEmail() {
 		return email;
 	}
-
-	/**
-	 * @param email the email to set
-	 */
+	
 	public void setEmail(String email) {
-		this.email = email;
-	}
+        this.email.set(email);
+    }
 
-	/**
-	 * @return the phone
-	 */
-	public int getPhone() {
+	public IntegerProperty getPhone() {
 		return phone;
 	}
-
-	/**
-	 * @param phone the phone to set
-	 */
+	
 	public void setPhone(int phone) {
-		this.phone = phone;
-	}
+        this.phone.set(phone);
+    }
 
-	/**
-	 * @return the nickname
-	 */
-	public String getNickname() {
+	public StringProperty getNickname() {
 		return nickname;
 	}
+	
+	public void setNickName(String nickname) {
+        this.nickname.set(nickname);
+    }
 
-	/**
-	 * @param nickname the nickname to set
-	 */
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-
-	/**
-	 * @return the typeStudent
-	 */
-	public String getTypeStudent() {
+	public StringProperty getTypeStudent() {
 		return typeStudent;
 	}
 
-	/**
-	 * @param typeStudent the typeStudent to set
-	 */
 	public void setTypeStudent(String typeStudent) {
-		this.typeStudent = typeStudent;
-	}
-
-	/**
-	 * @return the examProm
-	 */
-	public int getExamProm() {
+        this.typeStudent.set(typeStudent);
+    }
+	
+	public IntegerProperty getExamProm() {
 		return examProm;
 	}
 
-	/**
-	 * @param examProm the examProm to set
-	 */
 	public void setExamProm(int examProm) {
-		this.examProm = examProm;
-	}
-
-	/**
-	 * @return the quizProm
-	 */
-	public int getQuizProm() {
+        this.examProm.set(examProm);
+    }
+	
+	public IntegerProperty getQuizProm() {
 		return quizProm;
 	}
 
-	/**
-	 * @param quizProm the quizProm to set
-	 */
 	public void setQuizProm(int quizProm) {
-		this.quizProm = quizProm;
-	}
-
-	/**
-	 * @return the tareaProm
-	 */
-	public int getTareaProm() {
+        this.quizProm.set(quizProm);
+    }
+	public IntegerProperty getTareaProm() {
 		return tareaProm;
 	}
-
-	/**
-	 * @param tareaProm the tareaProm to set
-	 */
+	
 	public void setTareaProm(int tareaProm) {
-		this.tareaProm = tareaProm;
-	}
-
-	/**
-	 * @return the proyecto1
-	 */
-	public int getProyecto1() {
+        this.tareaProm.set(tareaProm);
+    }
+	public IntegerProperty getProyecto1() {
 		return proyecto1;
 	}
-
-	/**
-	 * @param proyecto1 the proyecto1 to set
-	 */
 	public void setProyecto1(int proyecto1) {
-		this.proyecto1 = proyecto1;
-	}
-
-	/**
-	 * @return the proyecto2
-	 */
-	public int getProyecto2() {
+        this.proyecto1.set(proyecto1);
+    }
+	public IntegerProperty getProyecto2() {
 		return proyecto2;
 	}
 
-	/**
-	 * @param proyecto2 the proyecto2 to set
-	 */
 	public void setProyecto2(int proyecto2) {
-		this.proyecto2 = proyecto2;
+        this.proyecto2.set(proyecto2);
 	}
-
-	/**
-	 * @return the proyecto3
-	 */
-	public int getProyecto3() {
+        
+	public IntegerProperty getProyecto3() {
 		return proyecto3;
 	}
 
-	/**
-	 * @param proyecto3 the proyecto3 to set
-	 */
 	public void setProyecto3(int proyecto3) {
-		this.proyecto3 = proyecto3;
+        this.proyecto3.set(proyecto3);
 	}
-
-	/**
-	 * @return the projectProm
-	 */
-	public int getProjectProm() {
+	public IntegerProperty getProjectProm() {
 		return projectProm;
 	}
 
-	/**
-	 * @param projectProm the projectProm to set
-	 */
 	public void setProjectProm(int projectProm) {
-		this.projectProm = projectProm;
+        this.projectProm.set(projectProm);
 	}
-
-	/**
-	 * @return the extraProm
-	 */
-	public int getExtraProm() {
+	public IntegerProperty getExtraProm() {
 		return extraProm;
 	}
 
-	/**
-	 * @param extraProm the extraProm to set
-	 */
 	public void setExtraProm(int extraProm) {
-		this.extraProm = extraProm;
+        this.extraProm.set(extraProm);
 	}
-
-	/**
-	 * @return the finalNote
-	 */
-	public int getFinalNote() {
+	public IntegerProperty getFinalNote() {
 		return finalNote;
 	}
-
-	/**
-	 * @param finalNote the finalNote to set
-	 */
+	
 	public void setFinalNote(int finalNote) {
-		this.finalNote = finalNote;
+        this.finalNote.set(finalNote);
 	}
-	
 
-	
 
 }

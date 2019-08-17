@@ -14,21 +14,21 @@
                <children>
                   <TableView fx:id="tablaEstudiantes" layoutX="336.0" layoutY="144.0" prefHeight="505.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn minWidth="0.0" text="Carne" />
+                      <TableColumn fx:id="idColumn" minWidth="0.0" text="Carne" />
                       <TableColumn fx:id="fullNameColumn" minWidth="0.0" text="Nombre" />
-                        <TableColumn minWidth="0.0" text="Email" />
-                        <TableColumn minWidth="0.0" text="Telefono" />
-                        <TableColumn minWidth="0.0" text="Nickname" />
-                        <TableColumn minWidth="0.0" text="Tipo" />
-                        <TableColumn minWidth="0.0" text="Examenes" />
-                        <TableColumn minWidth="0.0" text="Quizces" />
-                        <TableColumn minWidth="0.0" text="Tareas" />
-                        <TableColumn minWidth="0.0" text="Proyecto1" />
-                        <TableColumn minWidth="0.0" text="Proyecto2" />
-                        <TableColumn minWidth="0.0" text="Proyecto3" />
-                        <TableColumn minWidth="0.0" text="ProyProm" />
-                        <TableColumn minWidth="0.0" text="ExtraProm" />
-                        <TableColumn minWidth="0.0" text="Final" />
+                        <TableColumn fx:id="emailColumn" minWidth="0.0" text="Email" />
+                        <TableColumn fx:id="phoneColumn" minWidth="0.0" text="Telefono" />
+                        <TableColumn fx:id="nicknameColumn" minWidth="0.0" text="Nickname" />
+                        <TableColumn fx:id="tipoEstudianteColumn" minWidth="0.0" text="Tipo" />
+                        <TableColumn fx:id="examPromColumn" minWidth="0.0" text="Examenes" />
+                        <TableColumn fx:id="quizPromColumn" minWidth="0.0" text="Quizces" />
+                        <TableColumn fx:id="tareaPromColumn" minWidth="0.0" text="Tareas" />
+                        <TableColumn fx:id="proyecto1Column" minWidth="0.0" text="Proyecto1" />
+                        <TableColumn fx:id="proyecto2Column" minWidth="0.0" text="Proyecto2" />
+                        <TableColumn fx:id="proyecto3Column" minWidth="0.0" text="Proyecto3" />
+                        <TableColumn fx:id="projectPromColumn" minWidth="0.0" text="ProyProm" />
+                        <TableColumn fx:id="extraPromColumn" minWidth="0.0" text="ExtraProm" />
+                        <TableColumn fx:id="finalNoteColumn" minWidth="0.0" text="Final" />
                     </columns>
                   </TableView>
                </children>
