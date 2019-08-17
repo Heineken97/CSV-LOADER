@@ -1,11 +1,20 @@
 package com.model;
 
 import javafx.beans.property.IntegerProperty;
+
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/***
+ * 
+ * Se logra evidenciar el concepto de abstraccion y clase
+ *
+ */
 public class Estudiante {
+	
+	
+	// Se visualiza el concepto de encapsulamiento y atributos
 	
 	private final IntegerProperty  id;
 	private final StringProperty  fullname;
@@ -48,6 +57,8 @@ public class Estudiante {
 	public Estudiante() {
 		this(0,null,null,0,null,null,0,0,0,0,0,0);
 	}
+	
+	// VIsualizacion de 'Metodos'
 
 	public IntegerProperty getId() {
 		return id;

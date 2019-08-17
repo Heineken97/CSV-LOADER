@@ -17,6 +17,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+/***
+ * 
+ * Controladores de la tabla 
+ * 
+ * https://code.makery.ch/library/javafx-tutorial/part1/
+   https://docs.oracle.com/javafx/2/ui_controls/file-chooser.htm
+ *
+ */
+
 public class ClientViewController {
 	@FXML
 	private TableView<Estudiante> tablaEstudiantes;

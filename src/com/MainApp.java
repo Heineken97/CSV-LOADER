@@ -19,6 +19,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+
+// Uso del concepto de Herencia
+
 public class MainApp extends Application {
 	
 	private Stage primaryStage;
@@ -31,6 +34,12 @@ public class MainApp extends Application {
         return dataEstudiante ;
     }
 
+	
+	// Usando la sobreEscritura y polimorfismo.
+	/***
+	 * Uso de JavaFX para presentar interfaz grafica
+	 */
+	
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage=primaryStage;
@@ -42,6 +51,19 @@ public class MainApp extends Application {
 		
 	}
 	
+	/***
+	 * 
+	 * @param pathfile
+	 * @param column
+	 * @return Lista de Registros de Estudiantes
+	 * @throws Exception
+	 * 
+	 * Uso de clase externa javacsv que contiene un delimitador de texto
+	 * https://www.adictosaltrabajo.com/2006/11/03/csv/
+	 */
+	
+	
+	
 	public List ReadCSV(String pathfile,String column) throws Exception{
 		CsvReader csvReader=null;
 		
@@ -51,11 +73,11 @@ public class MainApp extends Application {
 			csvReader= new CsvReader(freader,column.charAt(0));
 		
 			String[] cabeceras=null;
-			//List registrosEstudiantes=new ArrayList();
-			
 			if(csvReader.readHeaders()) {
 				cabeceras=csvReader.getHeaders();
 			}
+			
+			//Aplicando la instaciacion, 
 			
 			while(csvReader.readRecord()) {
 				String id =csvReader.get(cabeceras[0]);
