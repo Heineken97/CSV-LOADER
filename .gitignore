@@ -1,0 +1,17 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Gradle
+.gradle/
+build/
+
+# Java
+*.class
+
+# Logs
+*.log
+
+# Otros
+*.csv
