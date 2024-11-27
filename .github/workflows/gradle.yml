@@ -49,4 +49,4 @@ jobs:
         gradle-version: '8.9' # Especifica la versión de Gradle
 
     - name: Generate and submit dependency graph
-      run: gradle dependencyReport
+      run: gradle dependencies
